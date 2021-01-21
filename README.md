@@ -1,8 +1,8 @@
 # Arquitetura Microserviços com Spring Cloud Netflix
 
-## Projeto utilizando microserviços, mensageria e gateway 
+## Descrição
 
-Este projeto utiliza uma Arquitetura de Microsserviços. Esta solução utiliza Netflix Eureka Server (Service registry) onde serão registrados os micros serviços, NetFlix Zuul (Gateway) responsável por fazer o roteamento, Service Broker(RabbitMQ) para troca de mensagens entre micros serviços,
+Este projeto é baseado na Arquitetura de Microsserviços, utiliza Netflix Eureka Server (Service registry) onde serão registrados os micros serviços, NetFlix Zuul (Gateway) responsável por fazer o roteamento, Service Broker(RabbitMQ) para troca de mensagens entre micros serviços,
 
 ### O que compreende este projeto:
 - Arquitetura Microserviços
@@ -22,6 +22,7 @@ Este projeto utiliza uma Arquitetura de Microsserviços. Esta solução utiliza 
 - Netflix Eureka
 - Netflix Zuul
 - Banco de dados MySql
+- Docker
 
 ### Microserviços integrados:
 - CRUD
@@ -37,6 +38,7 @@ Para subir a aplicação devemos seguir os seguintes passos:
  ```console
 git clone https://github.com/keomaklein/springCloudNetflix.git springCloudNetflix
 cd springCloudNetflix
+docker-compose up -d
  ```
 
  Para subir o projeto...
