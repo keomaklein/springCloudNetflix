@@ -14,8 +14,12 @@ import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,5 +62,26 @@ public class ProdutoController {
 		PagedModel<EntityModel<ProdutoVO>> pageModel = assembler.toModel(produtos); 
 		return new ResponseEntity<>(pageModel, HttpStatus.OK);
 	}
+
+	@PostMapping(	produces = {"application/json","application/xml","application/x-yaml"},
+					consumes = {"application/json","application/xml","application/x-yaml"})
+	public ProdutoVO  create(@RequestBody ProdutoVO produtoVO) {
+		ProdutoVO vo = produtoService.create(produtoVO);
+		vo.add(linkTo(methodOn(ProdutoController.class).findById(vo.getId())).withSelfRel());
+		return vo;
+	}
+
+	@PutMapping(	produces = {"application/json","application/xml","application/x-yaml"},
+					consumes = {"application/json","application/xml","application/x-yaml"})
+	public ProdutoVO  update(@RequestBody ProdutoVO produtoVO) {
+		ProdutoVO vo = produtoService.update(produtoVO);
+		vo.add(linkTo(methodOn(ProdutoController.class).findById(vo.getId())).withSelfRel());
+		return vo;
+	}
 	
+	@DeleteMapping("/id")
+	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+		produtoService.delete(id);
+		return ResponseEntity.ok().build();
+	}
 }
