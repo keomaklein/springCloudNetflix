@@ -1,0 +1,23 @@
+
+server:
+   port: 8082
+   servlet:
+      context-path: /pagamento
+
+spring:
+   application:
+      name: pagamento
+   jpa:
+      show-sql: false
+      hibernate:
+         ddl-auto: update
+      properties:
+         hibernate: 
+            dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+   jmx:
+      enable: false
+   datasource:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/pagamento?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&sslMode=DISABLED&useSSL=false&serverTimezone=UTC
+      username: root
+      password: 123456
