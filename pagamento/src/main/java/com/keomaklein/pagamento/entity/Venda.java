@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.keomaklein.pagamento.data.vo.VendaVO;
 
@@ -41,6 +42,7 @@ public class Venda implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@DateTimeFormat(pattern = "MM/dd/yyyy")
 	@Column(name="data", nullable = false)
 	private Date data;
 	

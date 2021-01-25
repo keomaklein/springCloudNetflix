@@ -9,8 +9,7 @@ import org.springframework.hateoas.RepresentationModel;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.keomaklein.pagamento.entity.Produto;
-import com.keomaklein.pagamento.entity.ProdutoVenda;
+import com.keomaklein.pagamento.entity.Venda;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -37,13 +36,13 @@ public class VendaVO extends RepresentationModel<VendaVO> implements Serializabl
 	private Date data;
 		
 	@JsonProperty("produtos")
-	private List<ProdutoVenda> produtos;
+	private List<ProdutoVendaVO> produtos;
 		
 	@JsonProperty("valorTotal")
 	private Double valorTotal;
 		
-	public static VendaVO create(Produto produto) {
-		return new ModelMapper().map(produto, VendaVO.class);
+	public static VendaVO create(Venda venda) {
+		return new ModelMapper().map(venda, VendaVO.class);
 	}
 }
 
