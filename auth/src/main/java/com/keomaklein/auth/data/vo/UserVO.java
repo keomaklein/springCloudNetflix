@@ -30,8 +30,8 @@ public class UserVO extends RepresentationModel<UserVO> implements Serializable 
 	@JsonProperty("id")
 	private Long id;
 	
-	@JsonProperty("username")
-	private String username;
+	@JsonProperty("userName")
+	private String userName;
 	
 	@JsonProperty("password")
 	private String password;

@@ -10,6 +10,6 @@ import com.keomaklein.auth.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	@Query("select u from User u where p.userName =: userName")
+	@Query("select u from User u where u.userName = :userName")
 	User findByUserName(@Param("userName") String userName);
 }

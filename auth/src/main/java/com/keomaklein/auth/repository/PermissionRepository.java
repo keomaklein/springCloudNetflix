@@ -10,6 +10,6 @@ import com.keomaklein.auth.entity.Permission;
 @Repository
 public interface PermissionRepository extends JpaRepository<Permission, Long> {
 
-	@Query("select p from Permission p where p.description =: description")
+	@Query("select p from Permission p where p.description = :description")
 	Permission findByPermission(@Param("description") String description);
 }

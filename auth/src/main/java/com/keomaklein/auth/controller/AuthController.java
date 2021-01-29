@@ -36,16 +36,17 @@ public class AuthController {
 		this.userRepository = userRepository;
 	}
 	
-	@RequestMapping("/teste")
-	public String teste() {
-		return "testado!";
+	
+	@PostMapping(value = "/teste")
+	public ResponseEntity<?>  teste() {
+		return ok("Foi!");
 	}
 
 	@PostMapping(produces = { "application/json", "application/xml", "application/x-yaml" }, consumes = {
 			"application/json", "application/xml", "application/x-yaml" })
 	public ResponseEntity<?> login(@RequestBody UserVO userVO) {
 		try {
-			var userName = userVO.getUsername();
+			var userName = userVO.getUserName();
 			var password = userVO.getPassword();			
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, password));
 			
