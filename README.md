@@ -44,5 +44,5 @@ docker-compose up -d
  ### Estrutura da aplicação:
 <p align="center">	
 	<img title="Estrutura da aplicação" alt="Estrutura da aplicação" 
-    src="https://https://github.com/keomaklein/springCloudNetflix/blob/master/assets/estrutura.png" width="40" height="40" />
+    src="https://github.com/keomaklein/springCloudNetflix/blob/master/assets/estrutura.png" width="40" height="40" />
 </p>
