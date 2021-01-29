@@ -43,5 +43,8 @@ docker-compose up -d
 
  ### Estrutura da aplicação:
 <p align="center">	
-	<img title="Estrutura da aplicação" alt="Delphi" src="https://github.com/keomaklein/springCloudNetflix/blob/main/assets/estrutura.png" width="40" height="40" />
+	<img title="Estrutura da aplicação" alt="Estrutura da aplicação" 
+    src="https://github.com/keomaklein/springCloudNetflix/blob/main/assets/estrutura.png" width="40" height="40" />
+	<img title="Estrutura da aplicação" alt="Estrutura da aplicação" 
+    src="https://github.com/keomaklein/springCloudNetflix/tree/master/assets/estrutura.png" width="40" height="40" />
 </p>
